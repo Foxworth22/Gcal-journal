@@ -1,2 +1,2 @@
 # Gcal-journal
-iPhone Trigger → GitHub Code → Google Calendar API → Log events
+iPhone Trigger → GitHub Workflow → Google Calendar API → Log events
