@@ -12,10 +12,10 @@ from googleapiclient.errors import HttpError
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar.events']
 
-def new_event():
+def new_event(summary, location, description, start_dateTime, start_timeZone, end_dateTime, end_timeZone):  # to skip a param simply input '' for it
     event = {
-        'summary': 'Google I/O 2015',
-        'location': '800 Howard St., San Francisco, CA 94103',
+        'summary': summary,
+        'location': location,
         'description': 'A chance to hear more about Google\'s developer products.',
         'start': {
             'dateTime': '2015-05-28T09:00:00-07:00',
@@ -25,7 +25,7 @@ def new_event():
             'dateTime': '2015-05-28T17:00:00-07:00',
             'timeZone': 'America/Los_Angeles',
         },
-        'recurrence': [
+        'recurrence': [  # learn
             'RRULE:FREQ=DAILY;COUNT=2'
         ],
         'attendees': [
@@ -33,9 +33,9 @@ def new_event():
             {'email': 'sbrin@example.com'},
         ],
         'reminders': {
-            'useDefault': False,
+            'useDefault': True,
             'overrides': [
-            {'method': 'email', 'minutes': 24 * 60},
+            # {'method': 'email', 'minutes': 24 * 60},
             {'method': 'popup', 'minutes': 10},
             ],
         },
@@ -90,6 +90,7 @@ def main():
         # calendarList = service.events().list(calendarId='primary')
         # for cal in calendarList:
         #     print(cal)
+        print ("\n\tdone.")
 
     except HttpError as error:
         print('An error occurred: %s' % error)
