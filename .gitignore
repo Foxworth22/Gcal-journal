@@ -131,3 +131,6 @@ dmypy.json
 # MyGoogle
 credentials.json
 token.json
+
+# MacOS
+.DS_Store
