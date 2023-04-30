@@ -25,7 +25,7 @@ def new_event(summary, location, description, start_dateTime, start_timeZone, en
             'dateTime': '2015-05-28T17:00:00-07:00',
             'timeZone': 'America/Los_Angeles',
         },
-        'recurrence': [  # learn
+        'recurrence': [  # TODO: learn and parametrize
             'RRULE:FREQ=DAILY;COUNT=2'
         ],
         'attendees': [
