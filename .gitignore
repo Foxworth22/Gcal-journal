@@ -134,3 +134,6 @@ token.json
 
 # MacOS
 .DS_Store
+
+# Errors with too much personal info
+expired_token_error.txt
