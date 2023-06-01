@@ -12,7 +12,9 @@ from googleapiclient.errors import HttpError
 # If modifying these scopes, delete the file token.json.
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
-def new_event(summary, location, description, start_dateTime, start_timeZone, end_dateTime, end_timeZone):  # to skip a param simply input '' for it
+def new_event(service, summary, location, description, start_dateTime, start_timeZone, end_dateTime, end_timeZone):  
+# to skip a param simply input '' for it
+# all calls to new_event() must pass service as first parameter to maintain access
     event = {
         'summary': summary,
         'location': location,
