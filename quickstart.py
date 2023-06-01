@@ -90,6 +90,7 @@ def main():
         print("\n", end=" ")  # same as print()
 
         # Print list of calendars -> Example from https://developers.google.com/calendar/api/v3/reference/calendarList/list#examples
+        # Documentation for calendar_list_entry[] https://developers.google.com/calendar/api/v3/reference/calendarList#resource
         page_token = None
         while True:
             calendar_list = service.calendarList().list(pageToken=page_token).execute()
