@@ -87,7 +87,7 @@ def main():
         for event in events:
             start = event['start'].get('dateTime', event['start'].get('date'))
             print(start, event['summary'])
-        print("\n", end=" ")  # same as print()
+        print("\n", end="")  # same as print()
 
         # Print list of calendars -> Example from https://developers.google.com/calendar/api/v3/reference/calendarList/list#examples
         # Documentation for calendar_list_entry[] https://developers.google.com/calendar/api/v3/reference/calendarList#resource
@@ -96,12 +96,10 @@ def main():
             calendar_list = service.calendarList().list(pageToken=page_token).execute()
             all_calendars = calendar_list['items']  # self-defined modulation for future re-use
             for calendar_list_entry in all_calendars:
-                # print (calendar_list_entry['summary'] + " : " + calendar_list_entry['id'])
                 string = calendar_list_entry['summary']
                 print ("%30s" % string[0:30], end=" ")
                 print(":", end=" ")
                 print (calendar_list_entry['id'])
-                # print ("%30s : %s" % (calendar_list_entry['summary'], calendar_list_entry['id']))
             page_token = calendar_list.get('nextPageToken')
             if not page_token:
                 break
